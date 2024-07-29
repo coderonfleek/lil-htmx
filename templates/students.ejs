@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Student Records</h1>
+    <a href="/">Home</a> | <a href="/add-student">Add Student</a>
+    <form method="GET" action="/students">
+        <input type="text" name="q" placeholder="Search students...">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        <% students.forEach(student => { %>
+            <li><%= student.firstName %> <%= student.lastName %> - <%= student.email %> - Age: <%= student.age %> - Grade: <%= student.grade %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
